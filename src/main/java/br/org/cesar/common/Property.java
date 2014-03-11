@@ -16,7 +16,6 @@ public abstract class Property {
 	private static final String PROPERTIES_FILE = "br/org/cesar/config.properties";
 	
 	static{
-		//BROWSER_DRIVE_PATH = new File(".").getCanonicalPath() + "\\chromedriver.exe";
 		CHROME_DRIVE_PATH = new File("").getAbsolutePath() + "\\src\\main\\resources\\chromedriver.exe";
 		IE64_DRIVE_PATH = new File("").getAbsolutePath() + "\\src\\main\\resources\\IEDriverServer.exe";
 		FIREFOX_DRIVE_PATH = new File("").getAbsolutePath() + "%PROGRAMFILES%\\Mozilla Firefox\\firefox.exe";

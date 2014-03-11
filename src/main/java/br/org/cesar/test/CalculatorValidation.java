@@ -57,7 +57,7 @@ public class CalculatorValidation extends BaseTestcase{
 	}
 	
 	/**
-	 * Dessa froma todos os testes da classe utilizam o construtor e consequentemente executam o numero de vezes dos itens
+	 * Dessa forma todos os testes da classe utilizam o construtor e consequentemente executam o numero de vezes dos itens
 	 */
 //	@Test
 	public void simpleTest(){

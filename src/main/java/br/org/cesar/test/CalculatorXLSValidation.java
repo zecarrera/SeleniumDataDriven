@@ -53,15 +53,6 @@ public class CalculatorXLSValidation extends BaseTestcase{
 		SimplifiedCalculatorPage.assertCalculationResult(String.valueOf(this.answer.intValue()));
 	}
 	
-	/**
-	 * Dessa froma todos os testes da classe utilizam o construtor e consequentemente executam o numero de vezes dos itens
-	 */
-//	@Test
-	public void simpleTest(){
-		System.out.println(driver.getCurrentUrl());
-		System.out.println(driver.getTitle());
-	}
-	
 	@Parameters
     public static Collection spreadsheetData() throws IOException {
         InputStream spreadsheet = new FileInputStream("src\\main\\resources\\calculate2numbers.xls");

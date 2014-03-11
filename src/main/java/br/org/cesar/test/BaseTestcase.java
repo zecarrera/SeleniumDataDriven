@@ -24,6 +24,5 @@ public class BaseTestcase {
 	@AfterClass
 	public static void afterClass() throws Exception {
 		driver.quit();
-		Selenium.resetDriver();
 	}
 }
