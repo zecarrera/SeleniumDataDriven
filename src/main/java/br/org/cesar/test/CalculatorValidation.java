@@ -10,12 +10,14 @@ import org.junit.runners.Parameterized.Parameters;
 
 import br.org.cesar.common.SimplifiedCalculatorPage;
 
+/**
+ * Classe de validação utilizando data driven, onde os dados estão definidos na própria classe.
+ * @author jcan
+ *
+ */
 @RunWith(Parameterized.class)
 public class CalculatorValidation extends BaseTestcase{
-	/**
-	 * Example app is Selenium Simplified book given example
-	 * Tests for calculation example
-	 */
+	
 
 	private String number1;
 	private String function;
@@ -23,7 +25,7 @@ public class CalculatorValidation extends BaseTestcase{
 	private String answer;
 	
 	/**
-	 * Class constructor
+	 * Construtor da classe, com os parametros que serão inicializados
 	 * @param num1
 	 * @param function
 	 * @param num2
@@ -37,6 +39,10 @@ public class CalculatorValidation extends BaseTestcase{
 		this.answer = answer;
 	}
 
+	/**
+	 * Método que define os dados que serão utilizados durante a execução do teste
+	 * @return
+	 */
 	@Parameters
 	public static Collection data() {
 		return Arrays.asList(new Object[][] { { "1", "plus", "1", "2" },
@@ -45,7 +51,7 @@ public class CalculatorValidation extends BaseTestcase{
 	}
 
 	/**
-	 *  Open home screen and verify page title 
+	 *  Teste exemplo, que insere os dados de entrada e verifica o resultado exibido, utilizando os dados fornecidos. 
 	 */
 	@Test
 	public void assertCalculation() {
@@ -57,7 +63,8 @@ public class CalculatorValidation extends BaseTestcase{
 	}
 	
 	/**
-	 * Dessa forma todos os testes da classe utilizam o construtor e consequentemente executam o numero de vezes dos itens
+	 * Teste abaixo está comentado, ao remover o comentário, podemos observar que todos os testes existentes
+	 * utilizam o construtor e consequentemente executam o numero de vezes dos itens parametrizados
 	 */
 //	@Test
 	public void simpleTest(){

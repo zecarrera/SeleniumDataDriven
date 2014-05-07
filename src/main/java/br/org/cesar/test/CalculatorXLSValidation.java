@@ -13,12 +13,14 @@ import org.junit.runners.Parameterized.Parameters;
 import br.org.cesar.common.SimplifiedCalculatorPage;
 import br.org.cesar.util.SpreadsheetData;
 
+
+/**
+ * Classe de validação utilizando data driven, onde os dados estão definidos no arquivo XLS externo.
+ * @author jcan
+ *
+ */
 @RunWith(Parameterized.class)
 public class CalculatorXLSValidation extends BaseTestcase{
-	/**
-	 * Example app is Selenium Simplified book given example
-	 * Tests for calculation example
-	 */
 
 	private Double number1;
 	private String function;
@@ -26,7 +28,7 @@ public class CalculatorXLSValidation extends BaseTestcase{
 	private Double answer;
 	
 	/**
-	 * Class constructor
+	 * Construtor da classe, com os parametros que serão inicializados
 	 * @param num1
 	 * @param function
 	 * @param num2
@@ -41,7 +43,8 @@ public class CalculatorXLSValidation extends BaseTestcase{
 	}
 
 	/**
-	 *  Open home screen and verify page title 
+	 *  Teste exemplo, que insere os dados de entrada e verifica o resultado exibido, 
+	 *  utilizando os dados fornecidos no arquivo XLS. 
 	 */
 	@Test
 	public void assertCalculation() {
@@ -53,6 +56,11 @@ public class CalculatorXLSValidation extends BaseTestcase{
 		SimplifiedCalculatorPage.assertCalculationResult(String.valueOf(this.answer.intValue()));
 	}
 	
+	/**
+	 * Método que define os dados que serão utilizados durante a execução do teste
+	 * indicando o caminho do arquivo externo
+	 * @return
+	 */
 	@Parameters
     public static Collection spreadsheetData() throws IOException {
         InputStream spreadsheet = new FileInputStream("src\\main\\resources\\calculate2numbers.xls");

@@ -1,9 +1,7 @@
 package br.org.cesar.util;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -42,33 +40,6 @@ public abstract class Utils {
 	public static void isClickable(String id) {
 		isClickable(By.id(id));
 	}
-	
-	@Deprecated
-	public static ExpectedCondition<Boolean> isCssClass(
-			final By locator, final String propertyName) {
-		return new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return propertyName.equals(driver.findElement(locator).getAttribute("class"));
-			}
-		};
-	}
-		
-	@Deprecated
-	public static String generateString(int length) {
-	    StringBuffer sb = new StringBuffer();
-	    for (int i = length; i > 0; i -= 12) {
-	      int n = Math.min(12, Math.abs(i));
-	      sb.append(StringUtils.leftPad(Long.toString(Math.round(Math.random() * Math.pow(36, n)), 36), n, '0'));
-	    }
-	    return sb.toString();
-	}
-
-//	@Deprecated
-//	public static void defaultWait() {
-//		wait(1000);
-//	}
-
-	
 	
 	/**
 	 * Pause for X milliseconds.

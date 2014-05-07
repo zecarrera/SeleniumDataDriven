@@ -11,13 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /*
- * Executa todas as acoes na pagina Inicial
+ * Classe de Página para a aplicação exemplo (calculadora), disponibilizando as ações disponíveis.
+ * Aplicação examplo é disponibilizada pelo livro- Selenium Simplified book
  */
 public class SimplifiedCalculatorPage {
 
-	/*
-	 * Instancia privada do webDriver que vira da suite de teste
-	 */
 	private static final WebDriver driver;
 	private static final WebDriverWait wait;
 
@@ -29,6 +27,9 @@ public class SimplifiedCalculatorPage {
 		wait = new WebDriverWait(driver, 10);
 	}
 	
+	/**
+	 * Locators utilizados na página
+	 */
 	static By firstInputLocator = By.id("number1");
 	static By secondInputLocator = By.id("number2");
 	static By operationLocator = By.id("function");
@@ -39,7 +40,7 @@ public class SimplifiedCalculatorPage {
 	}
 
 	/**
-	 * Enters input of first text field for calculator
+	 * Insere o primeiro input para cálculo
 	 */
 	public static void enterFirstInput(String input1){
 		driver.findElement(firstInputLocator).clear();
@@ -48,7 +49,7 @@ public class SimplifiedCalculatorPage {
 	
 	
 	/**
-	 * Enters input of second text field for calculator
+	 * Insere o segundo input para cálculo
 	 */
 	public static void enterSecondInput(String input2){
 		driver.findElement(secondInputLocator).clear();
@@ -56,7 +57,7 @@ public class SimplifiedCalculatorPage {
 	}
 	
 	/**
-	 * Selects operation
+	 * Seleciona a operação desejada
 	 */
 	public static void selectOperation(String operation){
 		new Select(driver.findElement(operationLocator)).selectByValue(operation);
@@ -64,14 +65,14 @@ public class SimplifiedCalculatorPage {
 	
 	
 	/**
-	 * Submit calculation
+	 * Submete operação para cálculo
 	 */
 	public static void calculate(){
 		driver.findElement(calculateButtonLocator).click();
 	}
 	
 	/**
-	 * Checks if answer is the one expected
+	 * Verifica se o resultado exibido é o adequado
 	 */
 	public static void assertCalculationResult(String correctResult){
 		wait.until(ExpectedConditions.visibilityOfElementLocated(answerLocator));

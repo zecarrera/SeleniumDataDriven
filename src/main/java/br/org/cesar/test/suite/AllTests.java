@@ -8,7 +8,6 @@ import br.org.cesar.test.CalculatorValidation;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
 		CalculatorValidation.class,
-//		TestSystemAbaExcecution.class
 	})
 public class AllTests {
 
